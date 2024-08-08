@@ -2,23 +2,41 @@ import React from 'react'
 import "./SignUp.css"
 import { Link } from 'react-router-dom'
 
+
+
+
 const SignUp = () => {
+
+  
+
+
+
+
+
   return (
     <>
       <div className="sign">
         <div className="sign-content">
             <h3>Sign Up</h3>
-            <form action="">
-            <input type="text" placeholder='Enter Name'/>
+            <form >
+            <input type="name" placeholder='Enter Name'/>
+            
             <input type="email" placeholder='Enter Email'/>
             <input type="Password" placeholder='Enter Password'/>
+            <div className="form-help">
+      <div className="remeber">
+        <input type="checkbox" />
+          <label htmlFor="">Remember Me</label>
+          </div>
+            <p>Need Help?</p>
+          </div>
             </form>
-            <button>Sign Up</button>
-            <p>Already have any account <Link to={"LogIn"}>LogIn</Link></p>
+            <button type='submit'>Sign Up</button>
+          <div className="contact"><p>Already have any account <Link to="/logIn">logIn</Link></p></div>  
         </div>
       </div>
     </>
   )
 }
 
-export default SignUp
+export default SignUp;

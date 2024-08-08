@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import "./LogIn.css"
-import { login, SignUp } from '../Auth/Auth';
+//import { login, SignUp } from '../Auth/Auth';
+import { Link } from 'react-router-dom'
+
 
 const LogIn = () => {
 
-
-const [signstate, setSignState] = useState("Sign In");
+ 
+{/*const [signstate, setSignState] = useState("Sign In");
 const [name, setName] = useState("");
 const [email, setEamil] = useState("");
 const [password, setPassword] = useState("");
@@ -18,21 +20,21 @@ const user_Auth = async (event) => {
   }else{
     await SignUp(name, email, password)
   }
-}
+}*/}
 
 
   return (
     <>
       <div className="loginPage">
         <div className="logInPage-content">
-            <h3>{signstate}</h3>
+            <h3>Sign In</h3>
 
 {/* form switch functionality  */}
 
-    <form action="">
-      {signstate === "Sign Up"? <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text"  placeholder='Enter Name'/>:<></>}
-          <input value={email} onChange={(e)=>{setEamil(e.target.value)}} type="email" placeholder='Enter Email'/> 
-          <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="Password" placeholder='Enter Password'/>
+    <form >
+       <input   type="email"  placeholder='Enter Email'/>
+         
+          <input  type="Password" placeholder='Enter Password'/>
 
             
     <div className="form-help">
@@ -43,16 +45,21 @@ const user_Auth = async (event) => {
             <p>Need Help?</p>
           </div>
             </form>
-            <button onClick={user_Auth} type='submit'>{signstate}</button>
-            <div className="form-switch">
+            
+            <button  type='submit'>Sign In</button>
+            <div className="contact">
+            <p>New To MetaBlog ? <span><Link to="/SignUp">SignUp</Link></span></p></div>
 
-{/* form switch functionality buttons */}
+
+            {/*<div className="form-switch">
+
+
 
           {signstate==="Sign In"?
-          <p>New To MetaBlog ? <span  onClick={()=>{setSignState("Sign Up")}}>Sign Up Now</span></p>:
+          :
           <p>Already Have a Account <span onClick={()=>{setSignState("Sign In")}}>Sign In Now</span></p>}
 
-          </div>
+          </div>*/}
         </div>
       </div>
     </>

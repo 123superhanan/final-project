@@ -7,9 +7,14 @@ import { useState } from 'react';
 
 
 const Navbar = () => {
-  
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
+
+  
+
+    const logoutClick = () => {
+        navigate('/login')
+    }
 
    {/* making a transition on search bar */ }
 
@@ -46,9 +51,16 @@ const Navbar = () => {
           <li><Link to={"/SinglePostPage"} >SinglePost</Link></li>
           <li><Link >Contact</Link></li>
           
-          <li><Link to={"LogIn"}>Register</Link></li>
+          <li>
+     
+        <Link to="/LogIn">Register</Link>
+     
+       
+     
+    </li>
 
           </ul>
+         
         </div>
         <div className="nav-right">
    {/* making a transition on search bar */ }
@@ -68,7 +80,10 @@ const Navbar = () => {
           <CiSearch size={20}  /> { /*icon*/}
 
           </button>
+          
       </div>
+      <button id='button' onClick={logoutClick}>Sign out</button>
+
           
    {/* theme change switch  !!!! functionality addition expexcted !!!! CONTEXT API */ }
    {/* making switch to display none  on search bar transition.... */ }
