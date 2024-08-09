@@ -10,6 +10,7 @@ import AuthorPage from "./Pages/AuthorPage/AuthorPage.jsx";
 import SinglePostPage from "./Pages/SinglePost/SinglePostPage.jsx";
 import SignUp from "./Pages/SignUp/SignUp.jsx";
 import LogIn from "./Pages/loggIn/LogIn.jsx";
+import Author from "./Pages/Author/Author.jsx";
 import PrivateRoutes from "./Utils/PrivateRoute.jsx";
 import { AuthProvider } from "./Utils/AuthContext.jsx";
 
@@ -33,6 +34,8 @@ function App() {
    <Route  path="/search" element={<Search/>} />  
    <Route path="/blog/:id" element={<SinglePostPage />} /> {/* Single post route */}
    <Route  path="/author/:author" element={<AuthorPage/>} /> 
+   <Route  path="/Author" element={<Author/>} /> 
+
    </Route>
   
   </Routes>

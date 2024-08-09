@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {  // Corrected "childern" to "chi
     const logInUser = async (userInfo) => {
         setLoading(true);
         try {
-            let response = await account.createEmailSession(
+            let response = await account.createEmailPasswordSession(
                 userInfo.email,
                 userInfo.password,
             );
@@ -25,9 +25,9 @@ export const AuthProvider = ({ children }) => {  // Corrected "childern" to "chi
             setUser(accountDetail);
         } catch (error) {
             console.error(error);
-        } finally {
+        } 
             setLoading(false);
-        }
+        
     };
 
     const logOutUser = async () => {
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {  // Corrected "childern" to "chi
                 userInfo.name
             );
 
-            await account.createEmailSession(
+            await account.createEmailPasswordSession(
                 userInfo.email,
                 userInfo.password1
             );
@@ -53,9 +53,9 @@ export const AuthProvider = ({ children }) => {  // Corrected "childern" to "chi
             setUser(accountDetails);
         } catch (error) {
             console.error(error);
-        } finally {
+        } 
             setLoading(false);
-        }
+        
     };
 
     const checkUserStatus = async () => {
