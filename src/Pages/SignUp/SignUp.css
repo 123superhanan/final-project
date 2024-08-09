@@ -5,7 +5,7 @@
     width: 100vw;
 }
 .sign-content{
-    height: 400px;
+    height: fit-content;
     width: 400px;
     padding: 10px;
     margin-top: 6em;
@@ -44,7 +44,7 @@
     font-size: 14px;
     color: #000;
 }
-.sign-content>button{
+#btn{
     border: 0;
     outline: 0;
     width: 80%;

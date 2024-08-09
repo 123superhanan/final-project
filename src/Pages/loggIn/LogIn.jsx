@@ -1,27 +1,29 @@
-import React, {useState} from 'react'
-import "./LogIn.css"
-//import { login, SignUp } from '../Auth/Auth';
-import { Link } from 'react-router-dom'
-
+import React, { useEffect, useRef } from 'react';
+import "./LogIn.css";
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Utils/AuthContext';
 
 const LogIn = () => {
+  const navigate = useNavigate();
+  const { user, logInUser } = useAuth();  // Corrected useAuth usage
 
+  const loginForm = useRef(null);
  
-{/*const [signstate, setSignState] = useState("Sign In");
-const [name, setName] = useState("");
-const [email, setEamil] = useState("");
-const [password, setPassword] = useState("");
+  useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+  }, [user, navigate]);  // Added navigate to dependency array
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const user_Auth = async (event) => {
-  event.preventDefault();
-  if(signstate === "Sign In"){
-    await login(email, password)
-  }else{
-    await SignUp(name, email, password)
-  }
-}*/}
+    const email = loginForm.current.email.value;
+    const password = loginForm.current.password.value;
 
+    const userInfo = { email, password };
+    logInUser(userInfo);
+  };
 
   return (
     <>
@@ -29,41 +31,28 @@ const user_Auth = async (event) => {
         <div className="logInPage-content">
             <h3>Sign In</h3>
 
-{/* form switch functionality  */}
+            <form ref={loginForm} onSubmit={handleSubmit}>
+              <input type="email" name="email" placeholder='Enter Email' required />
+              <input type="password" name="password" placeholder='Enter Password' required />
 
-    <form >
-       <input   type="email"  placeholder='Enter Email'/>
-         
-          <input  type="Password" placeholder='Enter Password'/>
-
-            
-    <div className="form-help">
-      <div className="remeber">
-        <input type="checkbox" />
-          <label htmlFor="">Remember Me</label>
-          </div>
-            <p>Need Help?</p>
-          </div>
+              <div className="form-help">
+                <div className="remember">
+                  <input type="checkbox" />
+                  <label htmlFor="">Remember Me</label>
+                </div>
+                <p>Need Help?</p>
+              </div>
+              
+              <button  id='btn' type='submit'>Sign In</button>
             </form>
-            
-            <button  type='submit'>Sign In</button>
+
             <div className="contact">
-            <p>New To MetaBlog ? <span><Link to="/SignUp">SignUp</Link></span></p></div>
-
-
-            {/*<div className="form-switch">
-
-
-
-          {signstate==="Sign In"?
-          :
-          <p>Already Have a Account <span onClick={()=>{setSignState("Sign In")}}>Sign In Now</span></p>}
-
-          </div>*/}
+              <p>New To MetaBlog? <span><Link to="/SignUp">Sign Up</Link></span></p>
+            </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default LogIn
+export default LogIn;

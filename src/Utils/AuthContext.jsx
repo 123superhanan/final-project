@@ -1,0 +1,89 @@
+import { useContext, useState, useEffect, createContext } from "react";
+import { account } from "../AppwriteConfig";
+import { ID } from "appwrite";
+
+const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {  // Corrected "childern" to "children"
+
+    const [loading, setLoading] = useState(true);  // Initial loading state should be true to prevent flicker
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        checkUserStatus();
+    }, []);
+
+    const logInUser = async (userInfo) => {
+        setLoading(true);
+        try {
+            let response = await account.createEmailSession(
+                userInfo.email,
+                userInfo.password,
+            );
+            let accountDetail = await account.get();
+            console.log("accountDetail", accountDetail);
+            setUser(accountDetail);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const logOutUser = async () => {
+        await account.deleteSession('current');
+        setUser(null);
+    };
+
+    const registerUser = async (userInfo) => {
+        setLoading(true);
+        try {
+            let response = await account.create(
+                ID.unique(),
+                userInfo.email,
+                userInfo.password1,
+                userInfo.name
+            );
+
+            await account.createEmailSession(
+                userInfo.email,
+                userInfo.password1
+            );
+            let accountDetails = await account.get();
+            setUser(accountDetails);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const checkUserStatus = async () => {
+        try {
+            let accountDetails = await account.get();
+            setUser(accountDetails);
+        } catch (error) {
+           
+        } 
+            setLoading(false);
+        
+    };
+
+    const contextData = {
+        user,
+        logInUser,
+        logOutUser,
+        registerUser,
+        checkUserStatus
+    };
+
+    return (
+        <AuthContext.Provider value={contextData}>
+            {loading ? <p>Loading...</p> : children} {/* Corrected "childern" to "children" */}
+        </AuthContext.Provider>
+    );
+}
+
+export const useAuth = () => useContext(AuthContext);
+
+export default AuthContext;

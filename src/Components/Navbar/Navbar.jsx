@@ -3,25 +3,24 @@ import "./Navbar.css"
 import {Link, useNavigate } from "react-router-dom"
 import { CiSearch } from "react-icons/ci";
 import { useState } from 'react';
+import { useAuth } from '../../Utils/AuthContext'
 
 
 
 const Navbar = () => {
+
+
+{/* SEARCH BY CATEGORY FUNCTIONALITY */}
+{/*NAVIGATION BAR ACCORDING TO PRIVATE ROUTING*/ }
+
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
+
+  const {user , logOutUser} = useAuth; 
+
   
-
-    const logoutClick = () => {
-        navigate('/login')
-    }
-
-   {/* making a transition on search bar */ }
-
-  const [isActive, setIsActive] = useState(false);
-  const toggleActive = () => {
-    setIsActive(!isActive);
-  };
+ 
 
   const handleSearchChange = (e) => {
             setSearchQuery(e.target.value);
@@ -36,7 +35,12 @@ const Navbar = () => {
 
   };
 
- 
+   {/* making a transition on search bar */ }
+
+   const [isActive, setIsActive] = useState(false);
+   const toggleActive = () => {
+     setIsActive(!isActive);
+   };
   
   return (
     <>
@@ -45,19 +49,23 @@ const Navbar = () => {
           <img src="./src/assets/Logo.png" alt="blog-page-logo-img-1" />
         </div>
         <div className="nav-left">
+      
           <ul>
-          <li><Link to={"/"} >Home</Link></li>
+            
+            {user ? 
+            (
+            <>
           <li><Link to={"/BlogPage"} >Blog</Link></li>
           <li><Link to={"/SinglePostPage"} >SinglePost</Link></li>
-          <li><Link >Contact</Link></li>
-          
-          <li>
-     
-        <Link to="/LogIn">Register</Link>
-     
-       
-     
-    </li>
+          <li><Link>Contact</Link></li>
+          </>
+          ):(
+            <>
+            <li><Link to={"/"} >Home</Link></li>
+            <li><Link to="/LogIn">Register</Link></li>
+            </>
+          )}
+         
 
           </ul>
          
@@ -82,7 +90,7 @@ const Navbar = () => {
           </button>
           
       </div>
-      <button id='button' onClick={logoutClick}>Sign out</button>
+      <button id='button' onClick={logOutUser}>Sign out</button>
 
           
    {/* theme change switch  !!!! functionality addition expexcted !!!! CONTEXT API */ }

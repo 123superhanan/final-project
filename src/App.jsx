@@ -1,3 +1,4 @@
+
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Footer from "./Components/Footer/Footer";
 import HomePage from "./Pages/HomePage/HomePage.jsx";
@@ -10,19 +11,22 @@ import SinglePostPage from "./Pages/SinglePost/SinglePostPage.jsx";
 import SignUp from "./Pages/SignUp/SignUp.jsx";
 import LogIn from "./Pages/loggIn/LogIn.jsx";
 import PrivateRoutes from "./Utils/PrivateRoute.jsx";
+import { AuthProvider } from "./Utils/AuthContext.jsx";
+
 
 function App() {
   
 
   return (
     <>
-
-     <Navbar/>
+<AuthProvider>
+  <Navbar/>
   <Routes>
   <Route  path="/" element={<HomePage/>} /> 
   <Route  path="/SignUp" element={<SignUp/>} /> 
   <Route  path="/LogIn" element={<LogIn/>} /> 
-<Route element={<PrivateRoutes/>}>
+
+ <Route element={<PrivateRoutes/>}>
 
    <Route  path="BlogPage" element={<BlogPage/>} />  
    <Route  path="/category/:category" element={<BlogCate/>} />  
@@ -33,7 +37,7 @@ function App() {
   
   </Routes>
      <Footer/>
-
+     </AuthProvider>
     </>
   )
 }
