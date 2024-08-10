@@ -20,6 +20,8 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     background: transparent;
+    color: #fff;
+
   }
   .add-blog-form input::placeholder{
     color: #fff;

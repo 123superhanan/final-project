@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import "./AddBlog.css";
 
 const AddBlog = () => {
+
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState('');
@@ -21,11 +22,11 @@ const AddBlog = () => {
       author,
       Authorimage: authorImage,
       category,
-      info: new Date().toLocaleDateString(), // Example: store the date
+      info: new Date().toLocaleDateString(),  // Example: store the date
     };
 
     await addNewBlog(newBlog);
-    navigate('/'); // Navigate back to the homepage after adding the blog
+    navigate('/');      // Navigate back to the homepage after adding the blog
   };
   const addNewBlog = async (newBlog) => {
     try {
@@ -40,6 +41,7 @@ const AddBlog = () => {
       alert('Error adding new blog:', error);
     }
   };
+  
   return (
     <div className="add-blog-page">
       <div className="add-blog-content">
