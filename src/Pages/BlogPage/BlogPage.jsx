@@ -4,11 +4,19 @@ import BlogCard from '../../Components/BlogCard/BlogCard'
 import blogData from "../../BlogData"
 import Add from '../../Components/Add/Add'
 
+
+
+
 const BlogPage = () => {
+
+  
 
   const viewBtnAlert = () => {
     alert("Click on card to view details... ")
   }
+
+
+
   return (
     <>
   <div className="Blog-page">
@@ -25,7 +33,7 @@ const BlogPage = () => {
       <img src="./src/assets/b-1.png" alt="blog-page-imgae-h-1-copy" />
       </div>
       <div className="card-area">
-
+      
     {blogData.map(blog =>(
         <BlogCard key={blog.id} blog={blog}/>
     ))}

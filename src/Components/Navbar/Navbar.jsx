@@ -58,14 +58,14 @@ const Navbar = () => {
             <>
           <li><Link to={"/BlogPage"} >Blog</Link></li>
           <li><Link to={"/author"}>Authors</Link></li>
-          <li><Link>Add Blog</Link></li>
+          <li><Link to={"/Addblog"}>Add Blog</Link></li>
           <li><Link>Account</Link></li>
           
           </>
           ):(
             <>
             <li><Link to={"/"} >Home</Link></li>
-            <li><Link>Contact</Link></li>
+            <li><Link to={"/Contact"}>Contact</Link></li>
             <li><Link>About</Link></li>
             <li><Link to="/LogIn">Register</Link></li>
 

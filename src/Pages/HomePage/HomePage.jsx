@@ -7,9 +7,11 @@ import blogData from "../../BlogData"
 
 const HomePage = () => {
 
+  
   const viewBtnAlert = () => {
     alert("Click on card to view details... ")
   }
+
   
   return (
 
@@ -38,7 +40,7 @@ const HomePage = () => {
             <Add/>
         <h3>Latest Posts</h3>
         <div className="card-area">
-
+        
    {/* mapping the data from BlogData to shoe BlogCard on HomePage and slicing it into only 9 cards*/ }
 
     {blogData.slice(0,9).map(blog =>(
