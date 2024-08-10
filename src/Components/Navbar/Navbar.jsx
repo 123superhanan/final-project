@@ -45,9 +45,10 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar ">
-        <div className="logo">
-          <img src="./src/assets/Logo.png" alt="blog-page-logo-img-1" />
-        </div>
+            <div className="logo">
+              <img src="./src/assets/Logo.png" alt="blog-page-logo-img-1" />
+            </div>
+{/* UPDATED NAVBAR ACCORDING TO AUTHENTICATION BY TIRNARY OPERATORS  */ }
         <div className="nav-left">
       
           <ul>
@@ -56,7 +57,6 @@ const Navbar = () => {
             (
             <>
           <li><Link to={"/BlogPage"} >Blog</Link></li>
-          <li><Link to={"/SinglePostPage"} >SinglePost</Link></li>
           <li><Link to={"/author"}>Authors</Link></li>
           <li><Link>Add Blog</Link></li>
           <li><Link>Account</Link></li>
@@ -76,6 +76,7 @@ const Navbar = () => {
           </ul>
          
         </div>
+
         <div className="nav-right">
    {/* making a transition on search bar */ }
 

@@ -8,7 +8,7 @@ import blogData from "../../BlogData"
 const HomePage = () => {
 
   const viewBtnAlert = () => {
-    alert("No More Data Please Enable BackEnd ")
+    alert("Click on card to view details... ")
   }
   
   return (

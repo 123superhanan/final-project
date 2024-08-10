@@ -11,6 +11,7 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 50px;
+    position: relative;
 }
 .img-div{
     
@@ -40,6 +41,7 @@
     font-size: 20px;
     font-weight: 500;
     color: #007bff;
+    margin-bottom: 20px;
 }
 #blue{
     width: fit-content;
@@ -49,11 +51,14 @@
     border-radius: 2px;
 }
 
+
 /* Container holding the entire slider */
 .slick-slider {
     margin: 0 auto;
     padding: 40px 0;
-    max-width: 1200px; /* Adjust based on your layout */
+    max-width: 1200px; 
+    
+    /* Adjust based on your layout */
 }
 
 /* The track that holds all the slides */

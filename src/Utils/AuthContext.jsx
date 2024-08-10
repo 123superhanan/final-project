@@ -23,6 +23,7 @@ export const AuthProvider = ({ children }) => {  // Corrected "childern" to "chi
             let accountDetail = await account.get();
             console.log("accountDetail", accountDetail);
             setUser(accountDetail);
+            alert("login successfully")
         } catch (error) {
             console.error(error);
         } 
@@ -33,6 +34,8 @@ export const AuthProvider = ({ children }) => {  // Corrected "childern" to "chi
     const logOutUser = async () => {
         await account.deleteSession('current');
         setUser(null);
+        alert("loggedOut successfully")
+
     };
 
     const registerUser = async (userInfo) => {
@@ -51,6 +54,8 @@ export const AuthProvider = ({ children }) => {  // Corrected "childern" to "chi
             );
             let accountDetails = await account.get();
             setUser(accountDetails);
+            alert("registerd successfully")
+
         } catch (error) {
             console.error(error);
         } 

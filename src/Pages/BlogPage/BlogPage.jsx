@@ -7,8 +7,7 @@ import Add from '../../Components/Add/Add'
 const BlogPage = () => {
 
   const viewBtnAlert = () => {
-    alert("No More Data Please Enable BackEnd on blog page ")
-
+    alert("Click on card to view details... ")
   }
   return (
     <>

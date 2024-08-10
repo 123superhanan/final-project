@@ -3,6 +3,7 @@ import "./Author.css";
 import Slider from 'react-slick';
 import blogData from "../../BlogData";
 import { Link } from 'react-router-dom';
+import Add from '../../Components/Add/Add';
 
 const Author = () => {
 
@@ -18,7 +19,9 @@ const Author = () => {
 
     return (
         <>
+          
             <div className="author-detail">
+          
                 <div className="author-cards">
                     <Slider {...settings}>
                         {blogData.map(blog => (
@@ -35,6 +38,7 @@ const Author = () => {
                         ))}
                     </Slider>
                 </div>
+                <Add/>
             </div>
         </>
     );
