@@ -52,6 +52,8 @@ function App() {
             <Route path="/author/:author" element={<AuthorPage blogs={blogs} />} /> {/* Pass blogs to AuthorPage */}
             <Route path="/Author" element={<Author blogs={blogs} />} /> {/* Pass blogs to Author */}
             <Route path="/Addblog" element={<AddBlog />} />
+          <Route path="/Contact" element={<Contact />} />
+
           </Route>
         </Routes>
         <Footer />

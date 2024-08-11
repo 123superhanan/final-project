@@ -60,7 +60,7 @@ const Navbar = () => {
           <li><Link to={"/author"}>Authors</Link></li>
           <li><Link to={"/Addblog"}>Add Blog</Link></li>
           <li><Link>Account</Link></li>
-          
+          <li><Link to={"/Contact"}>Contact</Link></li>
           </>
           ):(
             <>
@@ -68,6 +68,7 @@ const Navbar = () => {
             <li><Link to={"/Contact"}>Contact</Link></li>
             <li><Link>About</Link></li>
             <li><Link to="/LogIn">Register</Link></li>
+            
 
             </>
           )}
