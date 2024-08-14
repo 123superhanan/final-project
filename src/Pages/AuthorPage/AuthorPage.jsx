@@ -4,7 +4,7 @@ import Add from '../../Components/Add/Add'
 import blogData from '../../BlogData';
 import BlogCard from '../../Components/BlogCard/BlogCard';
 import { useParams } from 'react-router-dom';
-
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 const AuthorPage = () => {
   
@@ -14,6 +14,7 @@ const AuthorPage = () => {
   return (
     <>
       <div className="Author-page">
+        <Sidebar/>
         <marquee  >This is Author page (filtered by name)</marquee>
         <div className="author-content">
        
