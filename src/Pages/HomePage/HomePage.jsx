@@ -1,25 +1,30 @@
-import React from 'react'
+import React , { useState }from 'react'
 import "./HomePage.css"
 import Add from '../../Components/Add/Add'
 import BlogCard from '../../Components/BlogCard/BlogCard'
 import blogData from "../../BlogData"
+import Sidebar from '../../Components/Sidebar/Sidebar'
 
 
 const HomePage = () => {
 
   
-  const viewBtnAlert = () => {
-    alert("Click on card to view details... ")
-  }
+  const [visiblePosts, setVisiblePosts] = useState(9);
+
+  const showMorePosts = () => {
+    setVisiblePosts(prev => prev + 9); // Load 9 more posts on each click
+  };
+
 
   
   return (
 
 
     <>
+    
       <div className="Home-page ">
-      
-      
+      <Sidebar/>
+     
           <div className="home-content  ">
           <img src="./src/assets/h-1.png" alt="hero-img" />
          
@@ -43,13 +48,13 @@ const HomePage = () => {
         
    {/* mapping the data from BlogData to shoe BlogCard on HomePage and slicing it into only 9 cards*/ }
 
-    {blogData.slice(0,9).map(blog =>(
+    {blogData.slice(0, visiblePosts).map(blog =>(
         <BlogCard key={blog.id} blog={blog}/>
     ))}
       </div>
    {/* button for view more !!!! functionality addition expexcted !!!! */ }
       
-  <div className="universal-btn" onClick={viewBtnAlert}><button >view more</button></div>
+  <div className="universal-btn" onClick={showMorePosts}><button >view more</button></div>
 
   <Add/>
 </div>

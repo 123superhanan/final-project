@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import "./LogIn.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../Utils/AuthContext';
-
+import Sidebar from '../../Components/Sidebar/Sidebar'
 const LogIn = () => {
   const navigate = useNavigate();
   const { user, logInUser } = useAuth();  // Corrected useAuth usage
@@ -27,7 +27,9 @@ const LogIn = () => {
 
   return (
     <>
+    <Sidebar/>
       <div className="loginPage">
+      
         <div className="logInPage-content">
             <h3>Sign In</h3>
 

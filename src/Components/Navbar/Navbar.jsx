@@ -15,12 +15,9 @@ const Navbar = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
-
-
   const { user, logOutUser } = useAuth();  
 
   
- 
 
   const handleSearchChange = (e) => {
             setSearchQuery(e.target.value);
@@ -65,8 +62,8 @@ const Navbar = () => {
           ):(
             <>
             <li><Link to={"/"} >Home</Link></li>
-            <li><Link to={"/Contact"}>Contact</Link></li>
             <li><Link>About</Link></li>
+            <li><Link to={"/Contact"}>Contact</Link></li>
             <li><Link to="/LogIn">Register</Link></li>
             
 

@@ -1,0 +1,85 @@
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Hidden off-screen initially */
+    width: 250px;
+    height: 100%;
+    background-color: #242535;
+    color: white;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+    transform: translateX(-100%); /* Start off-screen */
+  }
+  
+  .sidebar.open {
+    transform: translateX(0); /* Slide into view */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Toggle button styles */
+  .menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    color: #fff;
+  }
+  #btnz{
+    margin-top: 200px;
+    margin-left: 55px;
+    width: 120px;
+    padding: 5px;
+    outline: 0;
+    border: 0;
+    
+    color: #fff;
+    font-size: 16px;
+    background: #4B6BFB;
+    border-radius: 4px;
+    transition: all linear .3s;
+}
+#btnz:hover{
+    background: transparent;
+    border: 1px solid #fff;
+}
+  /* Hide the sidebar and menu button on larger screens */
+  @media (min-width: 800px) {
+    .sidebar {
+      display: none; /* Hide the sidebar on large screens */
+    }
+  
+    .menu-btn {
+      display: none; /* Hide the toggle button on large screens */
+    }
+  }
+  
+  /* Show the sidebar and toggle button on small screens */
+  @media (max-width: 799px) {
+    .sidebar {
+      transform: translateX(0); /* Ensure it is visible on small screens */
+    }
+  
+    .sidebar.closed {
+      transform: translateX(-100%); /* Hide the sidebar off-screen */
+    }
+  }
+  

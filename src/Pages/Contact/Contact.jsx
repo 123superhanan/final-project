@@ -1,10 +1,12 @@
 import React from 'react'
 import "./Contact.css"
+import Sidebar from '../../Components/Sidebar/Sidebar'
 
 const Contact = () => {
   return (
     <div>
       <div className="contact-page">
+      <Sidebar/>
         <div className="contant-of-page">
           <div className="form-card">
           <h1>Contact Us</h1>

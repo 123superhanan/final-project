@@ -28,7 +28,7 @@ function App() {
         setBlogs(response.documents);
       } catch (error) {
         console.error('Error fetching blogs:', error);
-        alert('Error fetching blogs:', error);
+       
       }
     };
 

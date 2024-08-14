@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import "./SignUp.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../Utils/AuthContext';
-
+import Sidebar from '../../Components/Sidebar/Sidebar'
 const SignUp = () => {
   const navigate = useNavigate();
   const registerForm = useRef(null);
@@ -33,7 +33,9 @@ const SignUp = () => {
 
   return (
     <>
+    <Sidebar/>
       <div className="sign">
+      
         <div className="sign-content">
             <h3>Sign Up</h3>
             <form ref={registerForm} onSubmit={handleSubmit}>
