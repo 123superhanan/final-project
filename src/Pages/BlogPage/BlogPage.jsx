@@ -3,7 +3,7 @@ import "./BlogPage.css"
 import BlogCard from '../../Components/BlogCard/BlogCard'
 import blogData from "../../BlogData"
 import Add from '../../Components/Add/Add'
-
+import Sidebar from '../../Components/Sidebar/Sidebar'
 
 
 
@@ -19,6 +19,7 @@ const BlogPage = () => {
 
   return (
     <>
+    <Sidebar/>
   <div className="Blog-page">
     <div className="blog-content">
       <div className="blog-top">

@@ -1,21 +1,25 @@
-.Home-page{
-    height:fit-content;
+/* Home Page Styles */
+.Home-page {
+    height: fit-content;
     padding: 1em 6em;
-}
-.home-content{
-    height: 65%;width: 100%;
+  }
+  
+  .home-content {
+    height: 65%;
+    width: 100%;
     margin-top: 20px;
     position: relative;
+  }
   
-}
-.home-content img{
+  .home-content img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 7px;
-}
-.overlay{
+  }
+  
+  .overlay {
     height: 250px;
     width: 450px;
     background: #242535;
@@ -26,69 +30,104 @@
     bottom: -10%;
     left: 7%;
     padding: 10px;
-   
-
-}
-.overlay span{
-    font-size: 12px;padding: 3px;
+  }
+  
+  .overlay span {
+    font-size: 12px;
+    padding: 3px;
     color: #fff;
     background-color: #4B6BFB;
     border-radius: 2px;
-}
-.overlay h2{
+  }
+  
+  .overlay h2 {
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 25px;
     font-weight: 500;
-}
-.overlay .over-end {
+  }
+  
+  .overlay .over-end {
     display: flex;
     align-items: center;
     justify-content: start;
     gap: 15px;
-}
-.overlay .over-end img{
+  }
+  
+  .overlay .over-end img {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-}
-.over-end p{
+  }
+  
+  .over-end p {
     color: #97989F;
-    font-size:16px;
-}
-h3{
+    font-size: 16px;
+  }
+  
+  h3 {
     margin-top: 20px;
-}
-.card-area{
-   
+  }
+  
+  .card-area {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-}
-
-@media(max-width: 800px) {
-
-    .overlay{
-        bottom: -10%;
-        left: 7%;
-        width:70%;
-        height: 200px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .Home-page {
+      padding: 1em 4em; /* Adjust padding for medium screens */
     }
-    .overlay h2{
-        font-size: 16px;
-        font-weight: 500;
+  }
+  
+  @media (max-width: 992px) {
+    .Home-page {
+      padding: 1em 2em; /* Adjust padding for smaller screens */
     }
-    .Home-page{
-        padding: 1em 2em;
-
+  }
+  
+  @media (max-width: 800px) {
+    .overlay {
+      bottom: -5%; /* Adjust positioning for smaller screens */
+      left: 10%; /* Adjust positioning for smaller screens */
+      width: 70%;
+      height: 200px;
     }
-    .card-area{
-        grid-template-columns: 1fr 1fr;
+  
+    .overlay h2 {
+      font-size: 16px;
     }
-    .over-end p{
-        color: #97989F;
-        font-size:14px;
+  
+    .card-area {
+      grid-template-columns: 1fr 1fr; /* 2 columns for smaller screens */
     }
-   
-    
-}
+  
+    .over-end p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .overlay {
+      bottom: 0; /* Adjust positioning for very small screens */
+      left: 5%; /* Adjust positioning for very small screens */
+      width: 90%; /* Adjust width for very small screens */
+      height: auto; /* Allow height to be auto for better fit */
+      padding: 5px; /* Adjust padding for very small screens */
+    }
+  
+    .overlay h2 {
+      font-size: 14px;
+    }
+  
+    .card-area {
+      grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+  
+    .over-end p {
+      font-size: 12px;
+    }
+  }
+  

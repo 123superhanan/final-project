@@ -1,28 +1,60 @@
-.add-box{
-    padding: 1em 10em;
+/* Add Box Styles */
+.add-box {
+    padding: 1em 10em; /* Large padding for desktop */
     margin-top: 100px;
     width: 100%;
-   }
-   .add-con{
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       flex-direction: column;
-       gap: 10px;
-       background: #242535;
-       border-radius: 12px;
-       color: #696A75;
-       padding: 15px;
-       transition: all linear 0.5s;
-   }
-   .add-con:hover{
-       background: #15161f;
-
-   }
-   .add-con p{
-       font-weight: 500;
-       font-size: 14px;
-   }
-   .add-con h3 {
-   font-weight: 500;
-   }
+  }
+  
+  .add-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background: #242535;
+    border-radius: 12px;
+    color: #696A75;
+    padding: 15px;
+    transition: all linear 0.5s;
+  }
+  
+  .add-con:hover {
+    background: #15161f;
+  }
+  
+  .add-con p {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .add-con h3 {
+    font-weight: 500;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .add-box {
+      padding: 1em 6em; /* Adjust padding for medium screens */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .add-box {
+      padding: 1em 4em; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .add-box {
+      padding: 1em 2em; /* Adjust padding for small screens */
+      margin-top: 60px; /* Adjust margin for smaller screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .add-box {
+      padding: 1em; /* Adjust padding for very small screens */
+      margin-top: 30px; /* Adjust margin for very small screens */
+    }
+  }
+  

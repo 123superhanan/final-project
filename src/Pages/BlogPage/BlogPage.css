@@ -1,46 +1,93 @@
+/* Blog Page Styles */
 .Blog-page {
-    height:fit-content;
-    padding: 1em 6em;
-}
-.blog-content{
-    height: 65%;width: 100%;
+    height: fit-content;
+    padding: 1em 6em; /* Adjust padding for larger screens */
+  }
+  
+  .blog-content {
+    height: 65%;
+    width: 100%;
     margin-top: 20px;
     position: relative;
-   
-}
-.blog-top{
+  }
+  
+  .blog-top {
     display: flex;
     align-items: center;
-    justify-self:center ;
+    justify-self: center;
     flex-direction: column;
-}
-.blog-content h3{
+    margin-bottom: 20px;
+  }
+  
+  .blog-content h3 {
     font-weight: 500;
     text-transform: capitalize;
-}
-.blog-content span{
+  }
+  
+  .blog-content span {
     font-weight: 500;
     font-size: 14px;
     color: #97989F;
     text-transform: capitalize;
-}
-.blog-top{
-    margin-bottom: 20px;
-}
-.blog-content #br{
-    border-left: 1px solid #97989F ;
+  }
+  
+  .blog-content #br {
+    border-left: 1px solid #97989F;
     padding-left: 5px;
-}
-.blog-center img{
+  }
+  
+  .blog-center img {
     height: 70%;
     width: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 7px;
-}
-.card-area{
-   
+  }
+  
+  .card-area {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns for large screens */
     gap: 20px;
-}
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .Blog-page {
+      padding: 1em 4em; /* Adjust padding for medium screens */
+    }
+  
+    .card-area {
+      grid-template-columns: 1fr 1fr 1fr; /* Maintain 3 columns */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .Blog-page {
+      padding: 1em 2em; /* Adjust padding for smaller screens */
+    }
+  
+    .card-area {
+      grid-template-columns: 1fr 1fr; /* 2 columns for smaller screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Blog-page {
+      padding: 1em 1em; /* Adjust padding for mobile screens */
+    }
+  
+    .card-area {
+      grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Blog-page {
+      padding: 1em; /* Adjust padding for very small screens */
+    }
+  
+    .card-area {
+      grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+  }
+  

@@ -2,6 +2,7 @@ import React from 'react'
 import "./SinglePostPage.css"
 import blogData from "../../BlogData"
 import { useParams} from 'react-router-dom';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 
 
@@ -15,6 +16,7 @@ if (!blog) {
 }
   return (
     <>
+    <Sidebar/>
   <div className="single-post-page">
     <div className="single-post-contant">
     <div className="single-post-overlay">
